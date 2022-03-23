@@ -16,3 +16,19 @@ let robert = {
 let output = document.getElementById("browser-output");
 
 output.innerText = myName;
+
+let isItFalsy = [
+	false,
+	0,
+	-0,
+	"",
+	[],
+	{},
+	() => {},
+	function () {},
+	undefined,
+	null,
+	true,
+	"false",
+	"0",
+];
