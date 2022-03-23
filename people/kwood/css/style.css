@@ -1,1 +1,4 @@
 /* Use this CSS file to override styles from the main CSS */
+#browser-output {
+	border-radius: 25px;
+}
