@@ -15,4 +15,3 @@ let output = document.getElementById("browser-output");
 
 output.innerText = myName;
 
-
