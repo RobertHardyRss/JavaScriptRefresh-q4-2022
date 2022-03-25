@@ -18,15 +18,25 @@ const zach = new Person({
 	children: [],
 	awesome: false,
 });
-export const chris = new Person({
+
+const chris = new Person({
 	name,
 	age,
 	awesome,
 	children: [zach],
 });
 
-export function initialize() {
+export const addToOutput = (() => {
 	const output = document.getElementById("output");
+
+	return (text) => (output.innerHTML += "\n" + text);
+})();
+
+export function initialize() {
 	const children = chris.children.map((c) => c.name).join(", ");
-	output.innerHTML = `Hello <b>${chris.name}.</b>! Children: <b>${children}</b>`;
+	addToOutput(`Hello <b>${chris.name}.</b>! Children: <b>${children}</b>`);
+
+	document.addEventListener("click", (ev) => {
+		addToOutput(`X: ${ev.x} Y: ${ev.y}`);
+	});
 }
