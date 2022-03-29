@@ -1,1 +1,23 @@
-/* Use this CSS file to override styles from the main CSS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: font;
+	
+}
+
+#game-canvas {
+	width: 1400;
+	height: 800;
+	background-color: black;
+	border: solid 10px rgb(255, 0, 0);
+}
