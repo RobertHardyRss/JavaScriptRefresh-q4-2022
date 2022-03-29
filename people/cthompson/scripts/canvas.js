@@ -4,28 +4,72 @@
 // @ts-ignore
 const canvas = document.getElementById("canvas1");
 
-window.addEventListener("resize", () => {
-	console.log("here");
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-});
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const ctx = canvas.getContext("2d");
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+window.addEventListener("resize", () => {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+});
+
+let fireworks = [];
+
+canvas.addEventListener("click", (e) => {
+	fireworks.push(new Firework(e.offsetX, e.offsetY));
+});
+
+const drawLoop = () => {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	fireworks.forEach((f) => {
+		f.update();
+		f.draw();
+	});
+
+	fireworks = fireworks.filter((f) => f.isVisible);
+
+	window.requestAnimationFrame(drawLoop);
+};
+
+window.requestAnimationFrame(drawLoop);
 
 class Firework {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
+		/** @type {Spark[]} */
+		this.sparks = [];
+		this.createSparks();
+
+		this.opacity = 1;
+		this.isVisible = true;
 	}
 
-	createParticle() {}
+	createSparks() {
+		this.sparks = Array(Math.floor(Math.random() * 90 + 10))
+			.fill(0)
+			.map((i) => new Spark(ctx, this.x, this.y));
+	}
+
+	update() {
+		this.opacity -= 0.05;
+		this.isVisible = this.opacity > 0;
+		this.sparks.forEach((spark) => spark.update());
+	}
+
+	draw() {
+		ctx.save();
+		ctx.globalAlpha = this.opacity;
+		this.sparks.forEach((spark) => spark.draw());
+		ctx.restore();
+	}
 }
 
 class Spark {
 	constructor(
-		/** @type {HTMLCanvasElement} */ ctx,
+		/** @type {CanvasRenderingContext2D} */ ctx,
 		/** @type {number} */ x,
 		/** @type {number} */ y
 	) {
@@ -44,7 +88,7 @@ class Spark {
 	}
 
 	update() {
-		for (const coord in ["x", "y"]) {
+		for (const coord of ["x", "y"]) {
 			this[coord].pos += this[coord].speed * this[coord].direction;
 		}
 	}
@@ -52,7 +96,9 @@ class Spark {
 	draw() {
 		ctx.save();
 		ctx.fillStyle = "red";
+		ctx.beginPath();
 		ctx.arc(this.x.pos, this.y.pos, this.radius, 0, 2 * Math.PI);
+		ctx.fill();
 		ctx.restore();
 	}
 }
