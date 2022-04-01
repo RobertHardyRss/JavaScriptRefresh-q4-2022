@@ -1,3 +1,3 @@
 # JavaScript Refresher
 
-My notes.
+# Completed 1, 2,
