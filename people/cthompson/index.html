@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Refresher - Your Name Here</title>
+    <title>JavaScript Refresher - Chris Thompson</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,11 +15,14 @@
     </div>
     
     <h1>JavaScript Refresher</h1>
-    <h1>Your Name Here</h1>
+    <h1>Chris Thompson</h1>
 
-    <pre id="browser-output"></pre>
+    <pre id="output"></pre>
 
-    <script src="scripts/app.js" type="module"></script>
+    <script type="module">
+        import { initialize } from './scripts/app.js'
+        initialize()
+    </script>
 </body>
 
 </html>
