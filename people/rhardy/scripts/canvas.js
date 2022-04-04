@@ -3,6 +3,7 @@
 /** @type {HTMLCanvasElement} */
 //@ts-ignore
 let canvas = document.getElementById("canvas-1");
+//@ts-ignore
 let ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
