@@ -36,7 +36,7 @@ class Fireworks {
 		}
 	}
 	update() {
-		this.opacity *= 0.8;
+		this.opacity *= 0.95;
 		this.isVisible = this.opacity > 0;
 	}
 	draw() {
