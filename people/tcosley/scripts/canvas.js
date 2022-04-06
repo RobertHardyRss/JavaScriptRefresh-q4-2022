@@ -59,19 +59,16 @@ class spark {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-<<<<<<< HEAD
         this.radius = Math.random() * 3 + 3;
         this.xSpeed = Math.random() * 6 + 1;
         this.ySpeed = Math.random() * 6 + 1;
         this.xDirection = Math.random() > 0.5 ? 1 : -1;
         this.yDirection = Math.random() > 0.5 ? 1 : -1;
-=======
         this.radius = Math.random() * 2 + 1;
         this.xSpeed = Math.random() * 12 + 2;
         this.ySpeed = Math.random() * 12 + 2;
         this.xDirection = Math.random() > 0.333 ? 1 : -1;
         this.yDirection = Math.random() > 0.333 ? 1 : -1;
->>>>>>> develop
         this.opacity = 1;
         this.wireUpEvents();
         this.random1 = 360;
