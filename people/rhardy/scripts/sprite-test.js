@@ -11,12 +11,6 @@ const BASE_PATH = "../../assets/jetpackman/";
 window.addEventListener("resize", () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
-
-	// let sprite = new Image();
-	// sprite.src =
-	// 	"../../assets/jetpackman/__jet_pack_man_with_weapon_standing_walk.png";
-
-	// ctx.drawImage(sprite, 0, 0);
 });
 
 class Animator {
@@ -75,8 +69,6 @@ class Animator {
 		if (this.currentRow === this.rows) {
 			this.currentRow = 0;
 		}
-
-		// this.x += 5;
 	}
 
 	render() {
@@ -114,7 +106,6 @@ requestAnimationFrame(animationLoop);
 let imageSelect = document.getElementById("image");
 
 imageSelect.addEventListener("change", (e) => {
-	/** @type {HTMLInputElement} */
 	//@ts-ignore
 	const option = e.target.options[e.target.selectedIndex];
 	const imagePath = `${BASE_PATH}${option.value}`;
