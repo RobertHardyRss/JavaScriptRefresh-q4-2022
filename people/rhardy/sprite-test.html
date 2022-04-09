@@ -1,64 +1,306 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Sprite Test</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
-    
-</head>
-<body>
-    <img src="../../assets/jetpackman/__jet_pack_man_with_weapon_standing_walk.png" 
-        id="jetpack-01"    
-        style="display: none;">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Sprite Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+	</head>
+	<body>
+		<div style="float: right">
+			<a href="../../index.html">Home</a>
+			<a href="canvas.html">Canvas Refresher</a>
+			<a href="sprite-test.html">Sprite Tester</a>
+		</div>
 
-    <select name="image" id="image">
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_die.png" data-cols="5" data-rows="1">
-            jet_pack_man_with_weapon_red_helmet_standing_die
-        </option>
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_idle.png" data-cols="5" data-rows="3">
-            with_weapon_red_helmet_standing_idle
-        </option>
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_jump.png" data-cols="5" data-rows="2">
-            with_weapon_red_helmet_standing_jump
-        </option>
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_run.png" data-cols="5" data-rows="3">
-            with_weapon_red_helmet_standing_run
-        </option>
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_shoot.png" data-cols="5" data-rows="1">
-            with_weapon_red_helmet_standing_shoot
-        </option>
-        <option value="__jet_pack_man_with_weapon_red_helmet_standing_walk.png" data-cols="5" data-rows="3">
-            with_weapon_red_helmet_standing_walk
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_die.png" data-cols="5" data-rows="1">
-            with_weapon_standing_die
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_idle.png" data-cols="5" data-rows="  3">
-            with_weapon_standing_idle
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_jump.png" data-cols="5" data-rows="2">
-            with_weapon_standing_jump
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_run.png" data-cols="5" data-rows="3">
-            with_weapon_standing_run
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_shoot.png" data-cols="5" data-rows="1">
-            with_weapon_standing_shoot
-        </option>
-        <option value="__jet_pack_man_with_weapon_standing_walk.png" data-cols="5" data-rows="3" selected="selected">
-            with_weapon_standing_walk
-        </option>    
-        <option value="__jet_pack_man_now_weapon_flying.png" data-cols="5" data-rows="3">
-            now_weapon_flying
-        </option>    
-    </select>
+		<select name="image" id="image">
+			<option value="" disabled="disabled" selected="selected">
+				Select an Animation
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_flying_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man no weapon white helmet flying die
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_flying_no_movement.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man no weapon white helmet flying no movement
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_flying.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man no weapon white helmet flying
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_standing_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man no weapon white helmet standing die
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_standing_idle.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man no weapon white helmet standing idle
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_standing_jump.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man no weapon white helmet standing jump
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_standing_run.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man no weapon white helmet standing run
+			</option>
+			<option
+				value="__jet_pack_man_no_weapon_white_helmet_standing_walk.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man no weapon white helmet standing walk
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_flying_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man now weapon flying die
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_flying_no_movement.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man now weapon flying no movement
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_flying.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man now weapon flying
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_standing_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man now weapon standing die
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_standing_idle.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man now weapon standing idle
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_standing_jump.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man now weapon standing jump
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_standing_run.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man now weapon standing run
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_standing_walk.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man now weapon standing walk
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_flying_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with weapon flying die
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_flying_no_movement.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with weapon flying no movement
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_flying_shoot.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with weapon flying shoot
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_flying.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with weapon flying
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_flying_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with weapon red helmet flying die
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_flying_no_movement.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with weapon red helmet flying no movement
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_flying_shoot.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with weapon red helmet flying shoot
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_flying.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with weapon red helmet flying
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with weapon red helmet standing die
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_idle.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with weapon red helmet standing idle
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_jump.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with weapon red helmet standing jump
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_run.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with_weapon_red_helmet_standing_run
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_shoot.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with_weapon_red_helmet_standing_shoot
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_red_helmet_standing_walk.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with_weapon_red_helmet_standing_walk
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_die.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with_weapon_standing_die
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_idle.png"
+				data-cols="5"
+				data-rows="  3"
+			>
+				jet pack man with_weapon_standing_idle
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_jump.png"
+				data-cols="5"
+				data-rows="2"
+			>
+				jet pack man with_weapon_standing_jump
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_run.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with_weapon_standing_run
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_shoot.png"
+				data-cols="5"
+				data-rows="1"
+			>
+				jet pack man with_weapon_standing_shoot
+			</option>
+			<option
+				value="__jet_pack_man_with_weapon_standing_walk.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man with_weapon_standing_walk
+			</option>
+			<option
+				value="__jet_pack_man_now_weapon_flying.png"
+				data-cols="5"
+				data-rows="3"
+			>
+				jet pack man now_weapon_flying
+			</option>
+		</select>
 
-    <input type="range" id="framerate" value="60" min="16" max="100">
+		<input
+			type="range"
+			id="framerate"
+			value="60"
+			min="16"
+			max="100"
+			title="Framerate"
+		/>
+		<input
+			type="range"
+			id="scaleFactor"
+			value="1.00"
+			min="0.05"
+			max="2.00"
+			step="0.05"
+			title="Image Scale"
+		/>
 
-    <canvas id="canvas-1"></canvas>
+		<hr />
 
-    <script src='scripts/sprite-test.js' defer></script>
-</body>
+		<canvas id="canvas-1" height="600" width="800"></canvas>
+
+		<script src="scripts/sprite-test.js" type="module" defer></script>
+	</body>
 </html>
